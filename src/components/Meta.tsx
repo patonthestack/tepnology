@@ -139,6 +139,12 @@ export const Meta: React.FC<LayoutProps> = ({
         sizes="16x16"
         href="/favicons/favicon-16x16.png"
       />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicons/itachi_sharingan_nice.png"
+      />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta
         name="msapplication-TileImage"

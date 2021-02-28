@@ -46,7 +46,7 @@ export const Navbar = () => {
                       textDecoration: 'none',
                     }}
                   >
-                    Tepnology {process.env.NODE_ENV === 'development'}
+                    Tepnology Home{process.env.NODE_ENV === 'development'}
                   </Link>
                 </NextLink>
               </Heading>
@@ -57,7 +57,7 @@ export const Navbar = () => {
             <Menu>
               <>
                 <Stack direction="row" spacing={4}>
-                  <Box mr={0} pr={0}>
+                  {/* <Box mr={0} pr={0}>
                     <Avatar size="sm" name="N" bg="black">
                       <AvatarBadge
                         borderColor="papayawhip"
@@ -68,10 +68,10 @@ export const Navbar = () => {
                         <Text>2</Text>
                       </AvatarBadge>
                     </Avatar>
-                  </Box>
+                  </Box> */}
 
                   {/* You can also change the borderColor and bg of the badge */}
-                  <Box mr={3} pr={0}>
+                  {/* <Box mr={3} pr={0}>
                     <Avatar size="sm" name="M" bg="black">
                       <AvatarBadge
                         borderColor="papayawhip"
@@ -82,7 +82,7 @@ export const Navbar = () => {
                         <Text fontSize="10px">13</Text>
                       </AvatarBadge>
                     </Avatar>
-                  </Box>
+                  </Box> */}
                 </Stack>
                 {/* <MenuButton mr={0} pr={0}>
                     <Avatar size="sm" src={userData?.user.photoUrl} />
@@ -103,7 +103,6 @@ export const Navbar = () => {
                   ></MenuGroup>
                 </MenuList>
               </>
-              )
             </Menu>
           </Flex>
         </Flex>
