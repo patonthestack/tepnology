@@ -1,6 +1,7 @@
 import theme from 'styles/theme';
 import Router from 'next/router';
 import { useEffect } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
 
 // Analytics
 // Router.events.on('routeChangeComplete', () => {
@@ -19,7 +20,11 @@ const App = ({ Component, pageProps, children }) => {
     }
   }, []);
 
-  return <Component {...pageProps}>{children}</Component>;
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps}>{children}</Component>
+    </ChakraProvider>
+  );
 };
 
 export default App;

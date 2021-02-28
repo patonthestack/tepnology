@@ -11,7 +11,7 @@
       "@/components/*": ["components/*"],
       "@/data/*": ["data/*"],
       "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"],
+      "@/styles/*": ["src/styles/*"],
       "@/utils/*": ["utils/*"],
       "@/helpers/*": ["helpers/*"]
     },
