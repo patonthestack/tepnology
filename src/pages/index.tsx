@@ -20,10 +20,17 @@ const Home: React.FC = () => {
           as="h3"
           textAlign={['center', 'center', 'center', 'center']}
         >
-          Welcome to Tepnology LLC
+          I am so in love wth Daniela Esteves
         </Heading>
         <Text textAlign={['center', 'center', 'center', 'center']}>
-          Site under development, content coming soon!
+          Daniela Esteves, she the love of my life,{' '}
+          <p>better than the resteves</p>
+          <p>She make me go crazy,</p>
+          <p>Kanye Westeves</p>
+          <p>And when she come through?</p>
+          <p>it's a fiesteves</p>
+          <p>All I wanna do?</p>
+          <p>is have some sexteves ;)</p>
         </Text>
       </Container>
     </Layout>
