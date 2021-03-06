@@ -20,19 +20,19 @@ export const Layout: React.FC<LayoutProps> = ({
   hasNavbar = true,
   hasFooter = true,
 }) => {
-  // const Loading = dynamic<any>(
-  //   () => import('./Loading').then((mod) => mod.Loading),
-  //   { ssr: false },
-  // );
+  const Loading = dynamic<any>(
+    () => import('./Loading').then((mod) => mod.Loading),
+    { ssr: false },
+  );
 
   return (
     <>
-      {/* <Loading
-            startPosition={0.3}
-            stopDelayMs={200}
-            height={2}
-            options={{ easing: 'ease', speed: 500 }}
-          /> */}
+      <Loading
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={2}
+        options={{ easing: 'ease', speed: 500 }}
+      />
       <Meta
         title={title}
         description={description}

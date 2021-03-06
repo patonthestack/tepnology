@@ -1,8 +1,11 @@
-import { Box, Heading, Text, Link, Image } from '@chakra-ui/react';
+import { Box, Heading, Text, Link, Image, SimpleGrid } from '@chakra-ui/react';
 import { Container, Layout } from 'components/index';
 import NextLink from 'next/link';
+import { Card } from 'components/Card';
 
 const Home: React.FC = () => {
+  // viewType to be 'grid' or 'list'
+  const viewType = 'grid';
   return (
     <Layout
       title="Tepnology LLC"
@@ -20,18 +23,36 @@ const Home: React.FC = () => {
           as="h3"
           textAlign={['center', 'center', 'center', 'center']}
         >
-          i am so in love with Daniela Esteves
+          Tepnology, LLC
         </Heading>
         <Text textAlign={['center', 'center', 'center', 'center']}>
-          Daniela Esteves, she the love of my life,{' '}
-          <p>better than the resteves</p>
-          <p>She make me go crazy,</p>
-          <p>Kanye Westeves</p>
-          <p>And when she come through?</p>
-          <p>it's a fiesteves</p>
-          <p>All I wanna do?</p>
-          <p>is have some sexteves ;)</p>
+          Innovation. Spawns. Invigoration.
         </Text>
+        <Box>
+          <SimpleGrid
+            mt={4}
+            columns={[1, 1, 3]}
+            spacing={5}
+            mx={['0px', '0px', '0px']}
+            // @ts-ignore
+            columns={viewType === 'list' ? 1 : [1, 1, 2, 3, 3]}
+          >
+            <Box mt={5}>
+              <Card
+                viewType={viewType}
+                title="Content of feature to go here i.e. progress bar"
+                link={'/'}
+              ></Card>
+            </Box>
+            <Box mt={5}>
+              <Card
+                viewType={viewType}
+                title="Content of feature to go here i.e. multi select"
+                link={'/'}
+              ></Card>
+            </Box>
+          </SimpleGrid>
+        </Box>
       </Container>
     </Layout>
   );

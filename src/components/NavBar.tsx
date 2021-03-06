@@ -46,7 +46,8 @@ export const Navbar = () => {
                       textDecoration: 'none',
                     }}
                   >
-                    Tepnology Home{process.env.NODE_ENV === 'development'}
+                    Logo and hamburger menu to go here
+                    {process.env.NODE_ENV === 'development'}
                   </Link>
                 </NextLink>
               </Heading>

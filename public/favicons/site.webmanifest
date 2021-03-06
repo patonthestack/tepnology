@@ -3,9 +3,9 @@
   "short_name": "TEP",
   "icons": [
     {
-      "src": "android-icon-36x36.png",
+      "src": "itachi_sharingan_nice.jpg", 
       "sizes": "36x36",
-      "type": "image/png",
+      "type": "image/jpg",
       "density": "0.75"
     },
     {
