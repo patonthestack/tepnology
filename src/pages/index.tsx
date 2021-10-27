@@ -8,9 +8,9 @@ const Home: React.FC = () => {
   const viewType = 'grid';
   return (
     <Layout
-      title="Tepnology LLC"
+      title="Home"
       description="Tepnology LLC"
-      canonical=""
+      canonical="/"
       hasNavbar
       hasFooter
       schemaData={null}
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
           as="h3"
           textAlign={['center', 'center', 'center', 'center']}
         >
-          Tepnology, LLC
+          Tepnology
         </Heading>
         <Text textAlign={['center', 'center', 'center', 'center']}>
           Innovation. Spawns. Invigoration.
