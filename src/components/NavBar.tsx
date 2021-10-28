@@ -46,7 +46,7 @@ export const Navbar = () => {
                       textDecoration: 'none',
                     }}
                   >
-                    Logo and hamburger menu to go here
+                    Full Site Coming Soon
                     {process.env.NODE_ENV === 'development'}
                   </Link>
                 </NextLink>
