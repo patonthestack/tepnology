@@ -1,57 +1,30 @@
-import { Box, Heading, Text, Link, Image, SimpleGrid } from '@chakra-ui/react';
-import { Container, Layout } from 'components/index';
-import NextLink from 'next/link';
-import { Card } from 'components/Card';
+import { Box, useBreakpointValue } from '@chakra-ui/react';
+import { BackgroundImage, Container, Layout } from 'components/index';
+import { StringOrNumber } from '@chakra-ui/utils';
 
 const Home: React.FC = () => {
-  // viewType to be 'grid' or 'list'
-  const viewType = 'grid';
+  const size = useBreakpointValue<StringOrNumber>({
+    // base: '170px',
+    // '2xl': 36,
+    // '3xl': '185px',
+    sm: '30em',
+    md: '48em',
+    lg: '62em',
+    xl: '80em',
+    '2xl': '96em',
+  });
   return (
     <Layout
-      title="Tepnology LLC"
+      title="Home"
       description="Tepnology LLC"
-      canonical=""
+      canonical="/"
       hasNavbar
       hasFooter
       schemaData={null}
     >
       <Container fluid>
-        <Heading
-          mt={20}
-          fontWeight="700"
-          fontSize="2em"
-          as="h3"
-          textAlign={['center', 'center', 'center', 'center']}
-        >
-          Tepnology, LLC
-        </Heading>
-        <Text textAlign={['center', 'center', 'center', 'center']}>
-          Innovation. Spawns. Invigoration.
-        </Text>
         <Box>
-          <SimpleGrid
-            mt={4}
-            columns={[1, 1, 3]}
-            spacing={5}
-            mx={['0px', '0px', '0px']}
-            // @ts-ignore
-            columns={viewType === 'list' ? 1 : [1, 1, 2, 3, 3]}
-          >
-            <Box mt={5}>
-              <Card
-                viewType={viewType}
-                title="Content of feature to go here i.e. progress bar"
-                link={'/'}
-              ></Card>
-            </Box>
-            <Box mt={5}>
-              <Card
-                viewType={viewType}
-                title="Content of feature to go here i.e. multi select"
-                link={'/'}
-              ></Card>
-            </Box>
-          </SimpleGrid>
+          <BackgroundImage size={size}></BackgroundImage>
         </Box>
       </Container>
     </Layout>

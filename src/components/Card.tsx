@@ -62,7 +62,7 @@ export const Card: React.FC<CardProps> = (props) => {
                     transform: 'scale(0.95)',
                   }}
                 >
-                  Click to View
+                  Click to Try
                 </Button>
               </Box>
             </Box>
@@ -110,7 +110,9 @@ export const Card: React.FC<CardProps> = (props) => {
                 fontWeight="semibold"
                 as="h4"
                 lineHeight="tight"
-                isTruncated
+                // isTruncated
+                maxW="250px"
+                word-wrap="break-word"
               >
                 <Text>{props.title}</Text>
               </Box>
@@ -131,7 +133,7 @@ export const Card: React.FC<CardProps> = (props) => {
                     transform: 'scale(0.95)',
                   }}
                 >
-                  Click to View
+                  Try Here
                 </Button>
               </Box>
             </Box>
