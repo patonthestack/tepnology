@@ -11,8 +11,8 @@ export const BackgroundImage: FC<BackgroundProps> = () => {
       overflow="hidden"
       backgroundBlendMode="darken"
       bg={`url('/tepnology.svg')`}
-      // backgroundPosition="-26vw 0"
-      backgroundSize="cover"
+      bgSize={['contain', 'contain', 'cover', 'cover']}
+      bgRepeat="no-repeat"
     ></Box>
   );
 };
