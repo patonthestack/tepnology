@@ -1,4 +1,4 @@
-import { Box, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, useBreakpointValue } from '@chakra-ui/react';
 import { BackgroundImage, Container, Layout } from 'components/index';
 import { StringOrNumber } from '@chakra-ui/utils';
 
@@ -23,9 +23,13 @@ const Home: React.FC = () => {
       schemaData={null}
     >
       <Container fluid>
-        <Box>
+        <Flex
+          justify="center"
+          alignContent="center"
+          mt={['80', '80', '20', '0']}
+        >
           <BackgroundImage size={size}></BackgroundImage>
-        </Box>
+        </Flex>
       </Container>
     </Layout>
   );
