@@ -37,7 +37,7 @@ const Home: React.FC = () => {
         <Flex mb={4}>
           <Heading>Playground</Heading>
         </Flex>
-        <Box w={'15%'}>
+        <Box w={['100%', '15%']}>
           <AvatarCarousel usersData={users} />
         </Box>
       </Container>
