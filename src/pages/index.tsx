@@ -1,6 +1,9 @@
-import { Flex, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Flex, Heading, useBreakpointValue } from '@chakra-ui/react';
 import { BackgroundImage, Container, Layout } from 'components/index';
 import { StringOrNumber } from '@chakra-ui/utils';
+import { _usersData } from '@/data/_usersData';
+import { User } from 'types/User';
+import { AvatarCarousel } from '@/components/AvatarCarousel';
 
 const Home: React.FC = () => {
   const size = useBreakpointValue<StringOrNumber>({
@@ -13,6 +16,7 @@ const Home: React.FC = () => {
     xl: '80em',
     '2xl': '96em',
   });
+  const users: User[] = _usersData;
   return (
     <Layout
       title="Home"
@@ -30,6 +34,12 @@ const Home: React.FC = () => {
         >
           <BackgroundImage size={size}></BackgroundImage>
         </Flex>
+        <Flex mb={4}>
+          <Heading>Playground</Heading>
+        </Flex>
+        <Box w={'15%'}>
+          <AvatarCarousel usersData={users} />
+        </Box>
       </Container>
     </Layout>
   );
