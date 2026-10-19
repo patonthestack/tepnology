@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="786 265 348 368">
+<defs><linearGradient id="g" x1="757" y1="331" x2="1270" y2="844" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#787883"/><stop offset=".32" stop-color="#414042"/><stop offset=".52" stop-color="#72727d"/><stop offset=".66" stop-color="#55555e"/><stop offset=".85" stop-color="#313137"/><stop offset="1" stop-color="#27272c"/></linearGradient><linearGradient id="w" x1="484" y1="740" x2="1666" y2="740" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#787883"/><stop offset=".32" stop-color="#414042"/><stop offset=".52" stop-color="#72727d"/><stop offset=".66" stop-color="#55555e"/><stop offset=".85" stop-color="#313137"/><stop offset="1" stop-color="#27272c"/></linearGradient></defs>
+<polygon class="m" fill="url(#g)" points="787.93 323.9 950.45 417.45 950.45 631.43 907.34 588.75 879.77 459.45 788.27 408.23 787.93 323.9"/>
+<polygon class="m" fill="url(#g)" points="798.17 308.88 958.64 402.43 1119.79 308.88 1046.73 266.54 958.98 318.1 870.9 267.57 798.17 308.88"/>
+<polygon class="m" fill="url(#g)" points="1132.07 320.75 1131.75 409.44 1040.02 460.79 1012.53 589.78 983.38 618.64 970.81 631.09 970.81 625.26 983.38 612.81 1008.74 587.72 1036.37 458.1 1037.18 457.64 1127.63 407.02 1127.93 323.14 1132.07 320.75"/>
+</svg>

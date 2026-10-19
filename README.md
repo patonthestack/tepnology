@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tepnology
 
-## Getting Started
+Marketing site for Tepnology, a Service-Disabled Veteran-Owned (SDVOSB), minority-owned technology consulting firm serving the VA, DoD, and federal civilian agencies.
 
-First, run the development server:
+**Stack:** Next.js 16 (App Router, Cache Components) · React 19 · Tailwind CSS v4 · shadcn/ui (Radix) · Zod
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
+yarn install
+yarn dev     # http://localhost:3000
+yarn lint
+yarn build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+| Path | What |
+| --- | --- |
+| `src/lib/site.ts` | **All company facts and copy**: name, contact info, founder, UEI/CAGE, NAICS, services, agencies, values |
+| `src/app/(site)/*/page.tsx` | Routes: `/`, `/services`, `/capabilities`, `/about`, `/careers`, `/contact` |
+| `src/app/(site)/contact/actions.ts` | Contact form server action (validation), sends via `src/lib/email.ts` |
+| `src/components/ui/` | shadcn/ui components (add more with `npx shadcn@latest add <name>`) |
+| `src/components/layout/` | Header, footer |
+| `src/components/marketing/` | Section, page hero, CTA band |
+| `src/app/globals.css` | Theme tokens (light + dark) |
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Capability statement
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+`/capability-statement` is a one-page, print-ready capability statement built from `src/lib/site.ts`. The site links to the exported PDF at `public/tepnology-capability-statement.pdf`. After changing company data, regenerate it:
 
-## Learn More
+```bash
+yarn build && yarn start          # or yarn dev
+yarn capability-statement         # needs Google Chrome installed; BASE_URL / CHROME_PATH to override
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Contact form email
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Inquiries from `/contact` are emailed to the team with [Resend](https://resend.com) (free plan: 3,000 emails/month, 100/day). Replying to the email replies to the sender. Code: `src/lib/email.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Copy `.env.example` to `.env.local` and set `RESEND_API_KEY`. Set the same variables in your hosting provider for production. Without a key, local dev just logs submissions; production shows the visitor an error with the contact email instead.
