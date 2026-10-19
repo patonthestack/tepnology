@@ -4,6 +4,7 @@ import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react"
 
 import { companyData, site } from "@/lib/site"
 import { PageHero, Section } from "@/components/marketing/section"
+import { VerifyLinks } from "@/components/marketing/verify-links"
 import { ContactForm } from "./contact-form"
 
 export const metadata: Metadata = {
@@ -55,6 +56,7 @@ export default function ContactPage() {
                   </div>
                 ))}
               </dl>
+              <VerifyLinks className="mt-3 border-t pt-3" />
             </div>
           </aside>
 

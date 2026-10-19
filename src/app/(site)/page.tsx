@@ -10,6 +10,8 @@ import {
 } from "@/lib/site"
 import { LogoStacked } from "@/components/logo"
 import { CtaBand } from "@/components/marketing/cta-band"
+import { SdvosbBadge } from "@/components/marketing/sdvosb-badge"
+import { VerifyLinks } from "@/components/marketing/verify-links"
 import { Eyebrow, Section, SectionHeader } from "@/components/marketing/section"
 import { Button } from "@/components/ui/button"
 import {
@@ -196,16 +198,20 @@ function Hero() {
 function CredentialStrip() {
   return (
     <section aria-label="Credentials" className="border-b bg-card">
-      <div className="container-page grid gap-6 py-8 md:grid-cols-[repeat(3,auto)_1fr] md:items-center md:gap-10">
+      <div className="container-page grid gap-6 py-8 md:grid-cols-[auto_repeat(3,auto)_1fr] md:items-center md:gap-10">
+        <SdvosbBadge className="w-14" />
         {certifications.map((c) => (
           <div key={c.short} className="flex items-center gap-3">
             <BadgeCheckIcon className="size-5 shrink-0 text-brand" />
             <span className="text-sm font-medium">{c.name}</span>
           </div>
         ))}
-        <p className="font-mono text-xs text-muted-foreground md:text-right">
-          NAICS {naicsCodes.slice(0, 3).map((n) => n.code).join(" · ")}
-        </p>
+        <div className="space-y-1 md:text-right">
+          <p className="font-mono text-xs text-muted-foreground">
+            NAICS {naicsCodes.slice(0, 3).map((n) => n.code).join(" · ")}
+          </p>
+          <VerifyLinks className="md:justify-end" />
+        </div>
       </div>
     </section>
   )

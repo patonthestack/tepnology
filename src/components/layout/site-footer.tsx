@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { certifications, navItems, services, site } from "@/lib/site"
 import { Logo } from "@/components/logo"
+import { SdvosbBadge } from "@/components/marketing/sdvosb-badge"
 import { CopyrightYear } from "@/components/layout/copyright-year"
 import { Separator } from "@/components/ui/separator"
 
@@ -24,6 +25,7 @@ export function SiteFooter() {
               </span>
             ))}
           </div>
+          <SdvosbBadge className="w-20" />
         </div>
 
         <FooterColumn title="Services">

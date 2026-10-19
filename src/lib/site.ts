@@ -26,10 +26,28 @@ export const site = {
   careersEmail: "patrick.tep@tepnology.com",
   phone: "",
   location: "Manassas, VA, USA",
+  uei: "SGWXSNU51EA5",
+  cage: "8ZCP5",
   linkedin: "",
   // Regenerate with `yarn capability-statement` after changing anything below.
   capabilityStatementUrl: "/tepnology-capability-statement.pdf",
 } as const
+
+/** Public profiles where buyers can independently confirm registration and certifications. */
+export const verificationLinks = [
+  {
+    label: "SAM.gov",
+    shortLabel: "SAM.gov",
+    description: "Active registration, UEI, CAGE & NAICS",
+    href: `https://sam.gov/entities/view/${site.uei}`,
+  },
+  {
+    label: "SBA Small Business Search",
+    shortLabel: "SBA",
+    description: "Small business status & VetCert SDVOSB certification",
+    href: `https://search.certifications.sba.gov/profile/${site.uei}/${site.cage}`,
+  },
+]
 
 export const founder = {
   name: "Patrick Tep",
@@ -42,13 +60,14 @@ export const founder = {
 
 /** Company identifiers federal contracting officers look for. */
 export const companyData: { label: string; value: string }[] = [
-  { label: "UEI", value: "SGWXSNU51EA5" },
-  { label: "CAGE Code", value: "8ZCP5" },
+  { label: "UEI", value: site.uei },
+  { label: "CAGE Code", value: site.cage },
   { label: "Business Size", value: "Small Business" },
   {
     label: "Socioeconomic Status",
     value: "SDVOSB · Minority-Owned",
   },
+  { label: "SDVOSB Certification", value: "SBA VetCert" },
   { label: "Registration", value: "SAM.gov" },
 ]
 
@@ -65,7 +84,7 @@ export const certifications = [
     short: "SDVOSB",
     name: "Service-Disabled Veteran-Owned Small Business",
     description:
-      "Owned and controlled by a service-disabled veteran. Eligible for SDVOSB set-aside and sole-source awards across federal agencies, including the VA's Veterans First program.",
+      "Certified by the SBA's Veteran Small Business Certification (VetCert) program. Eligible for SDVOSB set-aside and sole-source awards across federal agencies, including the VA's Veterans First program.",
   },
   {
     short: "Minority-Owned",

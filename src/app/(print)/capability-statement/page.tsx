@@ -2,15 +2,16 @@ import type { Metadata } from "next"
 
 import {
   certifications,
-  companyData,
   differentiators,
   founder,
   naicsCodes,
   services,
   setAsides,
   site,
+  verificationLinks,
 } from "@/lib/site"
 import { LogoMark, Wordmark } from "@/components/logo"
+import { SdvosbBadge } from "@/components/marketing/sdvosb-badge"
 import { PrintToolbar } from "./print-toolbar"
 
 export const metadata: Metadata = {
@@ -104,13 +105,22 @@ export default function CapabilityStatementPage() {
             <Block title="Company Data">
               <dl className="space-y-1">
                 <Row label="Legal name" value={site.legalName} />
-                {companyData
-                  .filter((d) => ["UEI", "CAGE Code"].includes(d.label))
-                  .map((d) => (
-                    <Row key={d.label} label={d.label} value={d.value} mono />
-                  ))}
+                <Row label="UEI" value={site.uei} mono />
+                <Row label="CAGE Code" value={site.cage} mono />
+                <Row label="SDVOSB cert." value="SBA VetCert" />
                 <Row label="Location" value={site.location} />
               </dl>
+              <p className="mt-2 text-[7.5pt] text-[#4b4d57]">
+                Verify:{" "}
+                {verificationLinks.map((link, i) => (
+                  <span key={link.href}>
+                    {i > 0 && " · "}
+                    <a href={link.href} className="font-semibold text-[#2f6fde] underline">
+                      {link.shortLabel}
+                    </a>
+                  </span>
+                ))}
+              </p>
             </Block>
 
             <Block title="NAICS Codes">
@@ -127,14 +137,17 @@ export default function CapabilityStatementPage() {
             </Block>
 
             <Block title="Socioeconomic Status">
-              <ul className="space-y-0.5 text-[8pt]">
-                {certifications.map((c) => (
-                  <li key={c.short} className="flex gap-1.5">
-                    <span aria-hidden className="text-[#2f6fde]">✓</span>
-                    {c.name}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex items-start gap-3">
+                <ul className="flex-1 space-y-0.5 text-[8pt]">
+                  {certifications.map((c) => (
+                    <li key={c.short} className="flex gap-1.5">
+                      <span aria-hidden className="text-[#2f6fde]">✓</span>
+                      {c.name}
+                    </li>
+                  ))}
+                </ul>
+                <SdvosbBadge priority className="w-[0.62in]" />
+              </div>
             </Block>
 
             <Block title="Eligible For">
@@ -162,8 +175,7 @@ export default function CapabilityStatementPage() {
           <span>{domain}</span>
           <span>{site.email}</span>
           <span className="font-mono">
-            UEI {companyData.find((d) => d.label === "UEI")?.value} · CAGE{" "}
-            {companyData.find((d) => d.label === "CAGE Code")?.value}
+            UEI {site.uei} · CAGE {site.cage}
           </span>
         </footer>
       </article>
