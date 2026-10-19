@@ -11,6 +11,8 @@ import {
   site,
 } from "@/lib/site"
 import { CtaBand } from "@/components/marketing/cta-band"
+import { SdvosbBadge } from "@/components/marketing/sdvosb-badge"
+import { VerifyLinks } from "@/components/marketing/verify-links"
 import { PageHero, Section, SectionHeader } from "@/components/marketing/section"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -76,6 +78,7 @@ export default function CapabilitiesPage() {
                   </div>
                 ))}
               </dl>
+              <VerifyLinks variant="list" className="mt-5" />
             </CardContent>
           </Card>
 
@@ -116,7 +119,11 @@ export default function CapabilitiesPage() {
             {certifications.map((c) => (
               <Card key={c.short}>
                 <CardHeader className="gap-3">
-                  <BadgeCheckIcon className="size-6 text-brand" />
+                  {c.short === "SDVOSB" ? (
+                    <SdvosbBadge className="w-14" />
+                  ) : (
+                    <BadgeCheckIcon className="size-6 text-brand" />
+                  )}
                   <CardTitle>{c.short}</CardTitle>
                   <CardDescription>{c.description}</CardDescription>
                 </CardHeader>
